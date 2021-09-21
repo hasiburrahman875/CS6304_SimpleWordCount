@@ -43,6 +43,11 @@
 * Windows -> Preferences -> General -> Workspace
 * Check "Refresh using native tool or polling"
 
+* "Eclipse Workspace in use or cannot be created, chose a different one" error solve by:
+* cd <Eclipse Workspace Directory>
+* cd .metadata
+* rm .lock
+
 * "ConnectionRefused" error solve by following haddop commands:
 * sudo /sbin/service hadoop-hdfs-namenode restart
 * sudo /sbin/service hadoop-hdfs-datanode restart
