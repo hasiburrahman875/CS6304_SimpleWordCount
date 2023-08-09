@@ -42,7 +42,7 @@ hadoop fs -rm -r OutputFolder                                     //to remove "O
 
 
 ### Common Errors:
-Error 1: mkdir: Call From cs6304-akkcm-02/127.0.1.1 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused  
+Error 1: mkdir: Call From cs6304-mrpk9-02/127.0.1.1 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused  
 Explanation and Fix: In general this error comes if you are running hadoop first time on your VM after a reset. The below commands will fix it.
 ```
 stop-all.sh
