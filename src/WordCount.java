@@ -49,7 +49,7 @@ public class WordCount {
                        Context context
                        ) throws IOException, InterruptedException {
       int sum = 0;
-      for (IntWritable val : values) {      // (he , (1,2,1))
+      for (IntWritable val : values) {      // (he , (1,1,1))
         sum += val.get();
       }
       result.set(sum);
