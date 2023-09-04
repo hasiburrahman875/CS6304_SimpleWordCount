@@ -29,11 +29,11 @@ public class WordCount {
       
     public void map(Object key, Text value, Context context
                     ) throws IOException, InterruptedException {
-      StringTokenizer itr = new StringTokenizer(value.toString());
+      StringTokenizer itr = new StringTokenizer(value.toString()); //expample line: he is honest
       while (itr.hasMoreTokens()) {
         word.set(itr.nextToken());
         //word.set(itr.nextToken()+"\t"+lineCount);
-        context.write(word, one);
+        context.write(word, one); //(he, 1) 
       }
       //lineCount++;
     }
@@ -49,7 +49,7 @@ public class WordCount {
                        Context context
                        ) throws IOException, InterruptedException {
       int sum = 0;
-      for (IntWritable val : values) {
+      for (IntWritable val : values) {      // (he , (1,2,1))
         sum += val.get();
       }
       result.set(sum);
