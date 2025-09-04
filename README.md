@@ -2,7 +2,7 @@
 
 ### General Information:
 
-* Operating System:         Mac -> Microsoft Remote Desktop, Windows -> Default Remote Desktop, Ubuntu -> Remmina
+* Operating System:         Mac -> Windows App, Windows -> Default Remote Desktop, Ubuntu -> Remmina
 * Machine:                  cs6304-<mst_username>-01.class.mst.edu
 * User:                     <mst_username>
 * Default Password:         <mst_password>
