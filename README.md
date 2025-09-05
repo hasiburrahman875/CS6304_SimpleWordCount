@@ -97,6 +97,8 @@ hadoop fs -rm -r OutputFolder                                     //to remove "O
 - remove OutputFolder before generating the next results.
 - remove/clean InputFolder if you want to use a different file as input.
 
+### You can see Hadoop files using the following URL:
+http://localhost:9870
 
 ### Common Errors:
 Error 1: mkdir: Call From cs6304-mrpk9-02/127.0.1.1 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused  
