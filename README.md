@@ -101,16 +101,15 @@ hadoop fs -rm -r OutputFolder                                     //to remove "O
 http://localhost:9870
 
 
-```markdown
+
 ### Hadoop Common Errors and Fixes
 
 #### Error 1: `mkdir` connection refused
-```
+
 
 mkdir: Call From cs6304-mrpk9-02/127.0.1.1 to localhost:9000 failed
 on connection exception: java.net.ConnectException: Connection refused
 
-````
 **Explanation:**  
 Occurs when Hadoop is run for the first time on a VM after a reset.  
 
@@ -122,10 +121,10 @@ start-all.sh
 ````
 
 **Check running Hadoop daemons:**
+**Look for NameNode, DataNode, NodeManager, ResourceManager**
 
 ```bash
 jps
-#### Look for NameNode, DataNode, NodeManager, ResourceManager
 ```
 
 ---
