@@ -113,8 +113,20 @@ You can use the below command to check if namenode, datanode and nodemanager are
 jps
 
 ```
+Error 2: DataNode Missing in Hadoop
 
-Error 2: mkdir: `hdfs://localhost:9000/user/<username>': No such file or directory  
+If the NameNode UI (`http://localhost:9870`) shows **no DataNodes**, follow these steps.
+```
+start-dfs.sh
+start-yarn.sh
+```
+Clear old DataNode data:
+```
+rm -rf $HADOOP_HOME/hdfs/data/*
+hdfs namenode -format
+start-dfs.sh
+```
+Error 3: mkdir: `hdfs://localhost:9000/user/<username>': No such file or directory  
 Explanation and Fix: The error comes when there is no directory /user and /user/<username> in hdfs and you are trying to create a folder using "hadoop fs -mkdir InputFolder ".   
 Below command will create the directory structure if required and solves the problem.
 ```
