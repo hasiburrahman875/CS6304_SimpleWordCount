@@ -100,8 +100,6 @@ hadoop fs -rm -r OutputFolder                                     //to remove "O
 ### You can see Hadoop files using the following URL:
 http://localhost:9870
 
-
-
 ### Hadoop Common Errors and Fixes
 
 #### Error 1: `mkdir` connection refused
@@ -127,8 +125,6 @@ start-all.sh
 jps
 ```
 
----
-
 ##### Error 2: DataNode Missing
 
 **Problem:** NameNode UI (`http://localhost:9870`) shows **no DataNodes**.
@@ -148,8 +144,6 @@ hdfs namenode -format
 start-dfs.sh
 ```
 
----
-
 ##### Error 3: `No such file or directory` when creating HDFS folder
 
 ```
@@ -162,11 +156,8 @@ HDFS `/user/<username>` directory does not exist.
 **Fix:**
 
 ```bash
-hdfs dfs -mkdir -p /user/<username>
 hdfs dfs -mkdir -p InputFolder
 ```
-
----
 
 ##### Warning 1: Native Hadoop library not loaded
 
