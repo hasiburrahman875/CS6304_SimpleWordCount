@@ -8,7 +8,7 @@
 * Default Password:         <mst_password>
 
 ### Importing Project:
-* Open “eclipse”, right-click on “Package Explorer” window, click import.
+* Open “eclipse”, right-click on “Package Explorer” window, and click Import. or Click on file tab and Import.
 * Select “Git”-> “Projects from Git” and click “next”.
 * Select “clone url” and click “next”.
 * Paste “https://github.com/hasiburrahman875/CS6304_SimpleWordCount” in the “url” textbox, and click “next”. 
