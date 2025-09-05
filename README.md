@@ -21,9 +21,9 @@
 ### Input file:
 * Open folder "file", you will see the input file named "WordCount.txt"
 
-### If it shows "Compiling for Java version '1.7' is no longer supported. Minimal supported version is '1.8'" 
+### Common Compiler Error: If it shows "Compiling for Java version '1.7' is no longer supported. Minimal supported version is '1.8'" 
 
-it means Eclipse is compiling with Java 7 instead of Java 8 or newer.
+It means Eclipse is compiling with Java 7 instead of Java 8 or newer.
 
 Follow these steps to fix it:
 
