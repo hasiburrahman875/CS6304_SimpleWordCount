@@ -29,7 +29,7 @@ Follow these steps to fix it:
 
 ---
 
-## 1. Verify Installed JDKs
+#### 1. Verify Installed JDKs
 1. Go to **Window → Preferences**.
 2. Navigate to: **Java → Installed JREs**.
 3. Ensure `jdk1.8.x` or `openjdk-1.8.x` is listed.
@@ -41,7 +41,7 @@ Follow these steps to fix it:
 
 ---
 
-## 2. Configure Execution Environment
+#### 2. Configure Execution Environment
 1. In Preferences, go to **Java → Installed JREs → Execution Environments**.
 2. Select **JavaSE-1.8**.
 3. Under **Compatible JREs**, tick your Java 8 JDK.
@@ -49,7 +49,7 @@ Follow these steps to fix it:
 
 ---
 
-## 3. Update Project JRE
+#### 3. Update Project JRE
 1. Right-click your project → **Properties**.
 2. Go to **Java Build Path → Libraries**.
 3. If it shows **JRE System Library [JavaSE-1.7]**:
@@ -60,7 +60,7 @@ Follow these steps to fix it:
 
 ---
 
-## 4. Set Compiler Compliance Level
+#### 4. Set Compiler Compliance Level
 1. Right-click your project → **Properties**.
 2. Go to **Java Compiler**.
 3. Check **Enable project specific settings**.
@@ -69,13 +69,13 @@ Follow these steps to fix it:
 
 ---
 
-## 5. Clean & Rebuild
+#### 5. Clean & Rebuild
 1. From the top menu: **Project → Clean…**.
 2. Select your project and rebuild.
 
 ---
 
-## ✅ Done
+#### Done
 Your project should now compile with **Java 8** instead of Java 7.
 
 ### Output jar:
