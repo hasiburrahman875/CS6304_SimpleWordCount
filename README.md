@@ -100,40 +100,81 @@ hadoop fs -rm -r OutputFolder                                     //to remove "O
 ### You can see Hadoop files using the following URL:
 http://localhost:9870
 
-### Common Errors:
-Error 1: mkdir: Call From cs6304-mrpk9-02/127.0.1.1 to localhost:9000 failed on connection exception: java.net.ConnectException: Connection refused  
-Explanation and Fix: In general this error comes if you are running hadoop first time on your VM after a reset. The below commands will fix it.
+
+```markdown
+### Hadoop Common Errors and Fixes
+
+#### Error 1: `mkdir` connection refused
 ```
+
+mkdir: Call From cs6304-mrpk9-02/127.0.1.1 to localhost:9000 failed
+on connection exception: java.net.ConnectException: Connection refused
+
+````
+**Explanation:**  
+Occurs when Hadoop is run for the first time on a VM after a reset.  
+
+**Fix:**
+```bash
 stop-all.sh
 hadoop namenode -format
 start-all.sh
-```
-You can use the below command to check if namenode, datanode and nodemanager are running.
-```
+````
+
+**Check running Hadoop daemons:**
+
+```bash
 jps
-
+#### Look for NameNode, DataNode, NodeManager, ResourceManager
 ```
-Error 2: DataNode Missing in Hadoop
 
-If the NameNode UI (`http://localhost:9870`) shows **no DataNodes**, follow these steps.
-```
+---
+
+##### Error 2: DataNode Missing
+
+**Problem:** NameNode UI (`http://localhost:9870`) shows **no DataNodes**.
+
+**Fix:**
+
+```bash
 start-dfs.sh
 start-yarn.sh
 ```
-Clear old DataNode data:
-```
+
+If still missing, clear old DataNode data:
+
+```bash
 rm -rf $HADOOP_HOME/hdfs/data/*
 hdfs namenode -format
 start-dfs.sh
 ```
-Error 3: mkdir: `hdfs://localhost:9000/user/<username>': No such file or directory  
-Explanation and Fix: The error comes when there is no directory /user and /user/<username> in hdfs and you are trying to create a folder using "hadoop fs -mkdir InputFolder ".   
-Below command will create the directory structure if required and solves the problem.
+
+---
+
+##### Error 3: `No such file or directory` when creating HDFS folder
+
 ```
+mkdir: hdfs://localhost:9000/user/<username>: No such file or directory
+```
+
+**Explanation:**
+HDFS `/user/<username>` directory does not exist.
+
+**Fix:**
+
+```bash
+hdfs dfs -mkdir -p /user/<username>
 hdfs dfs -mkdir -p InputFolder
 ```
 
-Warning 1: WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable  
-Fix: You can just ignore this warning.
+---
 
+##### Warning 1: Native Hadoop library not loaded
 
+```
+WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+```
+
+**Fix:** Can be ignored. Hadoop will use built-in Java classes instead.
+
+```
