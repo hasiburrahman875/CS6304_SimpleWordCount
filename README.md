@@ -21,6 +21,63 @@
 ### Input file:
 * Open folder "file", you will see the input file named "WordCount.txt"
 
+### If it shows "Compiling for Java version '1.7' is no longer supported. Minimal supported version is '1.8'" 
+
+it means Eclipse is compiling with Java 7 instead of Java 8 or newer.
+
+Follow these steps to fix it:
+
+---
+
+## 1. Verify Installed JDKs
+1. Go to **Window → Preferences**.
+2. Navigate to: **Java → Installed JREs**.
+3. Ensure `jdk1.8.x` or `openjdk-1.8.x` is listed.
+   - If not, click **Add… → Standard VM** and browse to your Java 8 installation:
+     ```
+     /usr/lib/jvm/java-8-openjdk-amd64
+     ```
+   - Select it and set it as the **default JRE**.
+
+---
+
+## 2. Configure Execution Environment
+1. In Preferences, go to **Java → Installed JREs → Execution Environments**.
+2. Select **JavaSE-1.8**.
+3. Under **Compatible JREs**, tick your Java 8 JDK.
+4. Apply and Close.
+
+---
+
+## 3. Update Project JRE
+1. Right-click your project → **Properties**.
+2. Go to **Java Build Path → Libraries**.
+3. If it shows **JRE System Library [JavaSE-1.7]**:
+   - Remove it.
+   - Click **Add Library → JRE System Library**.
+   - Choose **Execution Environment: JavaSE-1.8** (or Workspace default JRE if set to 1.8).
+4. Apply and Close.
+
+---
+
+## 4. Set Compiler Compliance Level
+1. Right-click your project → **Properties**.
+2. Go to **Java Compiler**.
+3. Check **Enable project specific settings**.
+4. Set **Compiler compliance level = 1.8**.
+5. Apply and Close.
+
+---
+
+## 5. Clean & Rebuild
+1. From the top menu: **Project → Clean…**.
+2. Select your project and rebuild.
+
+---
+
+## ✅ Done
+Your project should now compile with **Java 8** instead of Java 7.
+
 ### Output jar:
 * Right click on project and select "Export".
 * Choose type "Java" -> "Jar file" and click "next".
